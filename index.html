@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Paint</title>
+  </head>
+  <body onload="onInit()">
+    <section class="content">
+      <header>
+        <h1>Doodle Paint</h1>
+        <div class="selection">
+          <form action="">
+            <input
+              onchange="changeColor(this.value)"
+              class="color"
+              type="color"
+            />
+            <input
+              onchange="changeBgColor(this.value)"
+              class="bg-color"
+              type="color"
+            />
+            <input
+              onchange="changeBrushSize(this.value)"
+              type="range"
+              name=""
+              id=""
+              min="1"
+              max="20"
+            />
+            <select onchange="changeBrush(this.value)" name="shapes" id="">
+              <option value="Line">Line</option>
+              <option value="Square">Square</option>
+              <option value="Circle">Circle</option>
+            </select>
+            <a class="canvas-options" href="">CLEAR</a>
+          </form>
+        </div>
+      </header>
+
+      <main>
+        <canvas class="canvas" style="border: 1px solid #000000"></canvas>
+      </main>
+
+      <div class="actions">
+        <button>
+          <a href="#" onclick="downloadCanvas(this)" download="myphoto"
+            >Download</a
+          >
+        </button>
+
+        <input class="file" type="file" id="imageInput" accept="image/*" />
+        <div class="share-container">
+          <button onclick=" uploadImg()">Share</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/upload.service.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
