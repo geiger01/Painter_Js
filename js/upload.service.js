@@ -2,7 +2,7 @@
 
 function uploadImg() {
   console.log('upload');
-  const imgDataUrl = gElCanvas.toDataURL('image/jpeg');
+  const imgDataUrl = gElCanvas.toDataURL().replace('image/png', 'image/jpeg');
 
   // A function to be called if request succeeds
   function onSuccess(uploadedImgUrl) {
